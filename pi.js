@@ -16,6 +16,7 @@ const is_empty = (array) => {
 
 const add = (n, array1, array2) => {
     let carry = 0
+
     for(let i = n - 1; i >= 0; i--) {
         array1[i] += array2[i] + carry
         if(array1[i] < base)
@@ -41,16 +42,17 @@ const sub = (n, array1, array2) => {
 
 const mul = (n, array1, number) => {
     let carry = 0
+
     for(let i = n - 1; i >= 0; i--) {
-        prod = (array1[i]) * number
-        prod += carry
-        if(prod >= base) {
-            carry = Math.floor(prod / base)
-            prod -= (carry * base)
+        product = (array1[i]) * number
+        product += carry
+        if(product >= base) {
+            carry = Math.floor(product / base)
+            product -= (carry * base)
         }
         else
             carry = 0
-        array1[i] = prod
+        array1[i] = product
     }
 }
 
@@ -127,7 +129,12 @@ const calculate = (digit_number) => {
     const time_end = new Date()
     const time_taken = (time_end.getTime() - time_start.getTime()) / 1000
 
-    console.warn(pi.startsWith("31415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679821480865"))
+    // console.warn(pi.startsWith("31415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679821480865"))
+    // console.log("PI (" + digit_number + ") = " + pi + "\n" + "It took: " + time_taken + " seconds\n")
 
-    console.log("PI (" + digit_number + ") = " + pi + "\n" + "It took: " + time_taken + " seconds\n")
+    return {
+        digits: digit_number,
+        pi: pi,
+        time: time_taken // in seconds
+    };
 }
