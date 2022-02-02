@@ -37,11 +37,14 @@
 
         const test = (digits) => {
             let res = calculate(digits)
-            elm_log.innerHTML = `Calculate ${res.digits} digits of PI number in ${res.time} seconds.<br><br>PI(${res.digits}) = <br>\n`
+            elm_log.innerHTML = `Calculate ${res.digits} digits of PI number in ${res.time} seconds.<br><br>PI(${res.digits}) = 3.<br>\n`
 
             // elm_pi.innerText = res.pi
             // elm_pi.innerHTML = chunk(res.pi, 50).join(" (50) <br>").trimEnd("(50) <br>")
-            elm_pi.innerHTML = chunk(res.pi, 50).map(line => chunk(line, 5).join(" &nbsp; ")).join("<br>")
+            elm_pi.innerHTML = chunk(res.pi.substr(1), 50)
+                                    .map(line => 
+                                        chunk(line, 5).join(" &nbsp; ")
+                                    ).join("<br>")
         }
         </script>
 
