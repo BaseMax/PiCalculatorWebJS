@@ -9,10 +9,10 @@
 
         <form method="post" action="" onsubmit="test(this.digits.value);return false;">
             Number of Digits:
-            <input type="text" name="digits" value="100" size="25" maxlength="25">
+            <input type="text" name="digits" value="800" size="25" maxlength="25">
 
             <br>
-            <input type="button" value="Calculate Pi" onclick="test(this.form.digits.value);">
+            <button onclick="test(this.form.digits.value);">Calculate Pi</button>
 
             <h4>Output:</h4>
             <div id="log"></div>
@@ -46,6 +46,10 @@
                                         chunk(line, 5).join(" &nbsp; ")
                                     ).join("<br>")
         }
+
+        window.addEventListener("load", () => {
+            document.querySelector("button").click()
+        })
         </script>
 
     </body>
