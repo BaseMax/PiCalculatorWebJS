@@ -1,5 +1,3 @@
-// https://github.com/BaseMax/PiCalculatorWebJS
-
 const base = Math.pow(10, 11)
 const cell_size = Math.floor(Math.log(base) / Math.LN10)
 
@@ -19,11 +17,12 @@ const is_empty = (array) => {
 const add = (n, array1, array2) => {
     let carry = 0
     for(let i = n - 1; i >= 0; i--) {
-        array1[i] += Number(array2[i]) + Number(carry)
-        if(array1[i] < base) carry = 0
+        array1[i] += array2[i] + carry
+        if(array1[i] < base)
+            carry = 0
         else {
             carry = 1
-            array1[i] = Number(array1[i]) - Number(base)
+            array1[i] = array1[i] - base
         }
     }
 }
@@ -48,7 +47,9 @@ const mul = (n, array1, number) => {
         if(prod >= base) {
             carry = Math.floor(prod / base)
             prod -= (carry * base)
-        } else carry = 0
+        }
+        else
+            carry = 0
         array1[i] = prod
     }
 }
@@ -56,26 +57,29 @@ const mul = (n, array1, number) => {
 const div = (n, array1, number, array2) => {
     carry = 0
     for(let i = 0; i < n; i++) {
-        currVal = Number(array1[i]) + Number(carry * base)
-        thediv = Math.floor(currVal / number)
-        carry = currVal - thediv * number
-        array2[i] = thediv
+        const value = array1[i] + (carry * base)
+        const temp = Math.floor(value / number)
+        carry = value - temp * number
+        array2[i] = temp
     }
 }
 
 const arctan = (angle, n, array) => {
-    const ang_squared = angle * angle
+    const angles = []
+    const adivK = []
+    const angle_square = angle * angle
+
     let k = 3
     let sign = 0
 
-    const angles = new Array(n)
-    const adivK = new Array(n)
     digits(n, array, 0)
     digits(n, angles, 1)
+
     div(n, angles, angle, angles)
     add(n, array, angles)
+
     while(!is_empty(angles)) {
-        div(n, angles, ang_squared, angles)
+        div(n, angles, angle_square, angles)
         div(n, angles, k, adivK)
 
         if(sign)
@@ -89,14 +93,15 @@ const arctan = (angle, n, array) => {
 }
 
 const calculate = (digit_number) => {
-    digit_number = Number(digit_number) + 5
+    digit_number = +digit_number + 5
+
     const time_start = new Date()
     const angle = [5, 239, 0];
     const coeff = [4, -1, 0];
-    
     const len = Math.ceil(1 + digit_number / cell_size)
-    const pi_digits = new Array(len)
-    const arctans = new Array(len)
+
+    const pi_digits = []
+    const arctans = []
 
     digits(len, pi_digits, 0)
 
