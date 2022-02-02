@@ -41,7 +41,7 @@
 
             // elm_pi.innerText = res.pi
             // elm_pi.innerHTML = chunk(res.pi, 50).join(" (50) <br>").trimEnd("(50) <br>")
-            elm_pi.innerHTML = chunk(res.pi, 50).join("<br>")
+            elm_pi.innerHTML = chunk(res.pi, 50).map(line => chunk(line, 5).join(" &nbsp; ")).join("<br>")
         }
         </script>
 
