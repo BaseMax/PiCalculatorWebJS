@@ -28,17 +28,16 @@
         const elm_pi = document.querySelector("#pi")
 
         const chunk = (str, n) => {
-            var ret = [];
-            var i;
-            var len;
-            for(i = 0, len = str.length; i < len; i += n)
-                ret.push(str.substr(i, n))
-            return ret
+            const chunks = []
+            const len = str.length
+            for(let i = 0; i < len; i += n)
+                chunks.push(str.substr(i, n))
+            return chunks
         }
 
         const test = (digits) => {
             let res = calculate(digits)
-            elm_log.innerHTML = `Calculate ${res.digits} digits of PI number in ${res.time} seconds.<br>PI(${res.digits}) = <br>\n`
+            elm_log.innerHTML = `Calculate ${res.digits} digits of PI number in ${res.time} seconds.<br><br>PI(${res.digits}) = <br>\n`
 
             // elm_pi.innerText = res.pi
             // elm_pi.innerHTML = chunk(res.pi, 50).join(" (50) <br>").trimEnd("(50) <br>")
