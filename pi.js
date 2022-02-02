@@ -96,8 +96,8 @@ const calculate = (digit_number) => {
     digit_number = +digit_number + 5
 
     const time_start = new Date()
-    const angle = [5, 239, 0];
-    const coeff = [4, -1, 0];
+    const angle = [5, 239, 0]
+    const coeff = [4, -1, 0]
     const len = Math.ceil(1 + digit_number / cell_size)
 
     const pi_digits = []
