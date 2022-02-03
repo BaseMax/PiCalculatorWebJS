@@ -1,3 +1,7 @@
+// PI Calculator Web JS
+// Calculating Pi number without limitation until 10k digits or more in your browser powered by JS without any third party library!
+// https://github.com/BaseMax/PiCalculatorWebJS
+
 const base = Math.pow(10, 11)
 const cell_size = Math.floor(Math.log(base) / Math.LN10)
 
