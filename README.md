@@ -1,6 +1,6 @@
 # PI Calculator Web JS (Online)
 
-Calculating **Pi number** without limitation until **1k** digits or more in your browser powered by **JS** without any third party library!
+Calculating **Pi number** without limitation until **10k** digits or more in your browser powered by **JS** without any third party library!
 
 **Demo:** https://basemax.github.io/PiCalculatorWebJS/pi.html
 
