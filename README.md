@@ -12,7 +12,7 @@
 
 [![](demo.jpg)](https://basemax.github.io/PiCalculatorWebJS/pi.html)
 
-### PI
+## PI
 
 ```
 PI(10005) = 3.
