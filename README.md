@@ -5,8 +5,8 @@
 ### Features
 
 - Calculate **Pi** digits until `n` digits
-- Support `ADD`, `SUB`, `MUL`, `DIV` operators without any limitation for `nth` digits
-- Solving `arctan` without using any builtings mathematic functions
+- Support `ADD`, `SUB`, `MUL`, `DIV` operators without any limitation for `nth` digits (I used another source)
+- Solving `arctan` without using any builtings mathematic functions (Algorithm ported)
 - Without any third party function and library
 - Everything at your browser, so Online!
 
