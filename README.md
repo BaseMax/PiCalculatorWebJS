@@ -4,6 +4,8 @@ Calculating **Pi number** without limitation until **10k** digits or more in you
 
 **Demo:** https://basemax.github.io/PiCalculatorWebJS/pi.html
 
+> Calculate 10005 digits of **PI number** in 0.389 seconds.
+
 ### Features
 
 - Calculate **Pi** digits until `n` digits
