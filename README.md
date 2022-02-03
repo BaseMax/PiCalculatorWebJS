@@ -18,6 +18,12 @@ I prepare this program by exploring other algorithms and source but I optimize t
 
 [![](demo.jpg)](https://basemax.github.io/PiCalculatorWebJS/pi.html)
 
+## TODO
+
+- Create package file for NodeJS
+- Add example for NodeJS
+- Add test file
+
 ## PI
 
 ```
