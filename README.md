@@ -1,5 +1,7 @@
 # PI Calculator Web JS (Online)
 
+Calculating **Pi number** without limitation until **1k** digits or more in your browser powered by **JS** without any third party library!
+
 **Demo:** https://basemax.github.io/PiCalculatorWebJS/pi.html
 
 ### Features
@@ -9,6 +11,8 @@
 - Solving `arctan` without using any builtings mathematic functions (Algorithm ported)
 - Without any third party function and library
 - Everything at your browser, so Online!
+
+I prepare this program by exploring other algorithms and source but I optimize this one and tried to remove extra commands, lines.
 
 [![](demo.jpg)](https://basemax.github.io/PiCalculatorWebJS/pi.html)
 
